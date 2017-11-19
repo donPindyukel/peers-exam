@@ -8,7 +8,23 @@ Weather Forecast Widget
 
 `npm run build` - сборка bundle.js
 
-
+#Важно:
+ Обращение к https://api.darksky.net/forecast/ выдает ошибку доступа CORS
+ 
+ ```
+ No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:3000' is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+ ```
+ Об этом даже сказано в документации API:
+ ```
+ Why do I get the error No 'Access-Control-Allow-Origin' header is present on the requested resource when I try to call the API?
+ 
+ We take security very seriously at Dark Sky. As a security precaution we have disabled cross-origin resource sharing (CORS) on our servers.
+ 
+ Your API call includes your secret API key as part of the request. If you were to make API calls from client-facing code, anyone could extract and use your API key, which would result in a bill that you'd have to pay. We disable CORS to help keep your API secret key a secret.
+ 
+ To prevent API key abuse, you should set up a proxy server to make calls to our API behind the scenes. Then you can provide forecasts to your clients without exposing your API key.
+ ``` 
+ Поэтому реккомендую использовать соответсвующие плагины для Chrome, например https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog
 
 Задание:
 
